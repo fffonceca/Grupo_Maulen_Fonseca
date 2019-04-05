@@ -1,28 +1,29 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 10ps
 
-module MAIN
-(
-input clock,
+module MAIN(
+input clk,
 input data,
 output dp,
 output [6:0] seg,
 output [3:0] an
 );
 
-localparam N = 21;
+localparam N = 16;
 
-reg [N-1:0] count; //contador para switchear las entradas
-reg [3:0] an_temp; //registro de an_temp para anodos.
-reg [6:0] sseg_temp; //registro de 7 segmentos para los segmentos.
-reg dp_temp; //decimal que cambiará con el switcheo
-reg [3:0] sseg; //registro para definir que BCD se va a escribir.
-reg [1:0] counter_bcd;
+reg [N-1:0] count = 0; //contador para switchear las entradas
+reg [3:0] an_temp = 0; //registro de an_temp para anodos.
+reg [6:0] sseg_temp = 0; //registro de 7 segmentos para los segmentos.
+reg dp_temp = 0; //decimal que cambiará con el switcheo
+reg [3:0] sseg = 0; //registro para definir que BCD se va a escribir.
+reg [1:0] counter_bcd = 0;
+
+
 
 wire [11:0] data_bcd;
 
-MS_suma_BCDs BCD12(clock,data,data_bcd);
+MS_suma_BCDs BCD12(clk,data,data_bcd);
 
-always @ (posedge clock) ///Multiplexor para 1000Hz yeah
+always @ (posedge clk) ///Multiplexor para 1000Hz yeah
  count <= count + 1;
 
 always @ (*) //Este always es para cambiar de anodo en anodo del sevenseg
@@ -50,14 +51,12 @@ begin
 	2'b11:
 				 begin
 				  an_temp = 4'b0111;
-                  sseg = 4'b1111;   //numero 15, apagar leds. daahh
+                  sseg = 4'b0000;   //numero 15, apagar leds. daahh
                   dp_temp = 1'b1;   //decimal apagado
 				 end
   endcase
  end
 
- assign an = an_temp; //define la salida del anodo escogido como la de la salida.
- assign dp = dp_temp; //define decimal a salida.
 
 
  always @ (*) //always para definir que numero llevara el sseg en cada caso
@@ -78,5 +77,7 @@ begin
   end
 
 assign seg = sseg_temp;
+assign an = an_temp; //define la salida del anodo escogido como la de la salida.
+assign dp = dp_temp; //define decimal a salida.
 
 endmodule

@@ -1,4 +1,4 @@
-`timescale 1ns / 1ps
+`timescale 1ns / 10ps
 //100Mhz / 115200 baudios = mas o menos: 2604
 
 module UART_a_lo_choro
@@ -16,11 +16,11 @@ parameter leyendo = 3'b010;
 parameter bit_parada = 3'b011;
 parameter clean = 3'b100;
 
-reg [11:0] counter;
-reg [2:0] indice_temp;
-reg [7:0] Byte_temp;
-reg [2:0] state;
-reg signal_registro;
+reg [11:0] counter = 0;
+reg [2:0] indice_temp=0;
+reg [7:0] Byte_temp=0;
+reg [2:0] state=0;
+reg signal_registro=0;
 
 always @(posedge clk)
 begin
@@ -29,6 +29,8 @@ begin
             begin
                 counter<=0;
                 indice_temp<=0;
+                Byte_temp <= 8'b00000000; //Agregado 1
+                signal_registro <= 0 ;
                 if (data == 1'b0) 
                     state <= bit_partida; 
                 else
@@ -38,7 +40,6 @@ begin
             begin
                 if (counter == (CLKs_por_bit-1)/2 )
                     begin
-                    
                     if (data == 1'b0) //bit de parada?
                         begin
                         counter <= 0;
@@ -52,8 +53,8 @@ begin
                     counter <= counter + 1;
                     state <= bit_partida;     
                     end
-            
             end   
+            
         leyendo:
             begin
                 if (counter < CLKs_por_bit-1)
@@ -65,7 +66,7 @@ begin
                 else 
                     begin
                     counter <= 0;
-                    Byte_temp[indice_temp] <= data;
+                    Byte_temp[indice_temp] <= data; //original: Byte_temp[indice_temp] <= data;
                     
                     if(indice_temp <7)
                         begin
