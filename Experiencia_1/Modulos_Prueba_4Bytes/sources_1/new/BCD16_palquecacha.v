@@ -19,7 +19,7 @@ reg [1:0] estado_contador = 0;
 reg [4:0] indice_bcd = 0; //son 12 bits nomas
 reg [15:0] data12_temp = 0;
 reg [15:0] data16_temp = 0;
-reg [1:0] contador_signal = 0;
+reg [2:0] contador_signal = 0;
 
 UART_a_lo_choro BCD8(clk,data,Signal,Byte);
 
