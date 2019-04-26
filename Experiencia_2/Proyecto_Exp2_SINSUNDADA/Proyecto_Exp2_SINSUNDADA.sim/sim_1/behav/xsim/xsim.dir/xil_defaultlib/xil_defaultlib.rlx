@@ -1,0 +1,10 @@
+0.6
+2018.3
+Dec  7 2018
+00:33:28
+C:/Users/Francisco/Desktop/LAB ANALOGICO/Exp2/Proyecto_Exp2_SINSUNDADA/Proyecto_Exp2_SINSUNDADA.sim/sim_1/behav/xsim/glbl.v,1544155481,verilog,,,,glbl,,,,,,,,
+C:/Users/Francisco/Desktop/LAB ANALOGICO/Exp2/Proyecto_Exp2_SINSUNDADA/Proyecto_Exp2_SINSUNDADA.srcs/sim_1/new/testbench_clkmgmt.v,1555105398,verilog,,,,SIMULAME,,,,,,,,
+C:/Users/Francisco/Desktop/LAB ANALOGICO/Exp2/Proyecto_Exp2_SINSUNDADA/Proyecto_Exp2_SINSUNDADA.srcs/sources_1/new/SAW.v,1555105369,verilog,,C:/Users/Francisco/Desktop/LAB ANALOGICO/Exp2/Proyecto_Exp2_SINSUNDADA/Proyecto_Exp2_SINSUNDADA.srcs/sources_1/new/div_saw.v,,SAW,,,,,,,,
+C:/Users/Francisco/Desktop/LAB ANALOGICO/Exp2/Proyecto_Exp2_SINSUNDADA/Proyecto_Exp2_SINSUNDADA.srcs/sources_1/new/SINE.v,1555104227,verilog,,C:/Users/Francisco/Desktop/LAB ANALOGICO/Exp2/Proyecto_Exp2_SINSUNDADA/Proyecto_Exp2_SINSUNDADA.srcs/sources_1/new/divisor_mg.v,,SINE,,,,,,,,
+C:/Users/Francisco/Desktop/LAB ANALOGICO/Exp2/Proyecto_Exp2_SINSUNDADA/Proyecto_Exp2_SINSUNDADA.srcs/sources_1/new/div_saw.v,1555106782,verilog,,C:/Users/Francisco/Desktop/LAB ANALOGICO/Exp2/Proyecto_Exp2_SINSUNDADA/Proyecto_Exp2_SINSUNDADA.srcs/sim_1/new/testbench_clkmgmt.v,,div_saw,,,,,,,,
+C:/Users/Francisco/Desktop/LAB ANALOGICO/Exp2/Proyecto_Exp2_SINSUNDADA/Proyecto_Exp2_SINSUNDADA.srcs/sources_1/new/divisor_mg.v,1555100619,verilog,,C:/Users/Francisco/Desktop/LAB ANALOGICO/Exp2/Proyecto_Exp2_SINSUNDADA/Proyecto_Exp2_SINSUNDADA.srcs/sim_1/new/testbench_clkmgmt.v,,Divisordeclk,,,,,,,,
