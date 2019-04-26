@@ -282,4 +282,8 @@ begin
     salida_temp <= sine[r_index];
 end
 
+
+
+
+
 endmodule

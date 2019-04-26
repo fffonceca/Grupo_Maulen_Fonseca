@@ -1,10 +1,11 @@
 `timescale 1ns / 1ps
+
 module div_saw(
     input clk,
     output clkdiv
 );
 reg [4:0] N = 8;
-reg [9:0]count = 0;
+reg [9:0] count = 0;
 reg clk_temp = 0;
 
 

@@ -1,18 +1,16 @@
 `timescale 1ns / 1ps
 module SIMULAME();
 reg r_clk = 0;
-wire [7:0] lawea;
+reg [1:0] sw = 3;
+wire lawea;
 
-SAW uut(r_clk,lawea);
+COMPARADOR uut(r_clk,sw,lawea);
 
 always
-#1 r_clk = ~r_clk;
-
+#5 r_clk = ~r_clk;
 
 initial
 begin
-#100000000 $finish;
+#100000000;
 end
-
-
 endmodule
