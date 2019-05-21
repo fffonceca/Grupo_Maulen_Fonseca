@@ -1,6 +1,0 @@
-verilog xil_defaultlib  \
-"../../../../EXP3_TECLADO.srcs/sources_1/ip/MEM_SINE/sim/MEM_SINE.v" \
-
-verilog xil_defaultlib "glbl.v"
-
-nosort
