@@ -12,7 +12,7 @@ wire clk4khz;
 reg [9:0] salto;  //FIJA VALOR DE PARTE ENTERA Y DECIMAL
 reg [5:0] part_ent; //PARTE ENTERA
 reg [3:0] BCD; //PRIMER DECIMAL
-reg [0:0] estado = 0; //cuarto de la onda
+reg [1:0] estado = 0; //cuarto de la onda
 reg [3:0] suma = 0; //suma parcial de los BCD
 reg [6:0] index = 0; //asigna valor real que se leera en MEM_SINE
 
@@ -150,7 +150,7 @@ always @ (*)
         end
         default: 
         begin
-        salto = 10'b00000_0000;
+        salto = 10'b000000_0000;
         part_ent = salto[9:4];
         BCD = salto[3:0]; 
         end

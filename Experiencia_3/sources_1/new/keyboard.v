@@ -11,7 +11,7 @@ output reg [7:0] out_reg; //recordar cambio al output
 reg enable;
 reg [3:0] counter;
 reg [7:0] data_curr;
-reg estado;
+reg ESTADO;
 reg flag;
 
 initial
@@ -50,11 +50,11 @@ begin
 	if (data_curr == 8'hf0) //Si llega el dato de que se solto tecla asigno tecla anterior
 	   begin
        out_reg <= 0;
-       estado <= 1;
+       ESTADO <= 1;
        end
-	else if(estado == 1)
+	else if(ESTADO == 1)
 	   begin
-	   estado <= 0;
+	   ESTADO <= 0;
 	   end
 	else 
 	   begin
